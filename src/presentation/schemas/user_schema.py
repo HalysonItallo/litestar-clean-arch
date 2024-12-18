@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import Annotated
 
 from tortoise.contrib.pydantic import pydantic_model_creator, pydantic_queryset_creator
@@ -12,7 +13,13 @@ UserTortoiseListSchema = pydantic_queryset_creator(
 )
 
 
-UserRequestSchema = Annotated[UserTortoiseSchema, "Schema para um único usuário"]
-UserResponseSchema = Annotated[
-    UserTortoiseListSchema, "Schema para uma lista de usuários"
-]
+@dataclass
+class UserSchema:
+    name: str
+    email: str
+    password: str
+    confirm_password: str
+
+
+# UserSchema = Annotated[UserTortoiseSchema, "Schema para um único usuário"]
+UserListSchema = Annotated[UserTortoiseListSchema, "Schema para uma lista de usuários"]

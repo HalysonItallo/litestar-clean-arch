@@ -9,12 +9,13 @@ from src.routes import user_router
 
 database = TortoiseDatabaseConnection()
 
+
 app = Litestar(
     [user_router],
     on_startup=[database.init_database],
     on_shutdown=[database.shutdown_database],
     openapi_config=OpenAPIConfig(
-        title="Litestart-Test",
+        title="Litestart-Clean-Arch",
         version="1.0.0",
         root_schema_site="swagger",
         render_plugins=[

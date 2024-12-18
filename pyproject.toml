@@ -1,7 +1,7 @@
 [project]
-name = "litestar-test"
+name = "litestar-clean-arch"
 version = "0.1.0"
-description = "Add your description here"
+description = "Projeto desenvolvido para botar em prática os conceitos de clean arch em python."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
